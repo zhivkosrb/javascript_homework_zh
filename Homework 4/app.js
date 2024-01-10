@@ -76,3 +76,85 @@ function sumOfArr(arras) {
 //console.log(sumOfArr([1, 2, 3, 4, 10]));
 /////// BATALIV DOMASHNATA ZA SEGA!!!
 //SE SKRENAV IMAV POGORE NESHTO MALKU RAZLICHNO PISHANO GO NAPRAJV BASH ISTO SEA I SEPAK MI DAVAT  SAMO NULA MENE........
+
+/*Write a javascript function that:
+
+When given any array of strings (should work with array with any number of elements)
+It will create one big string and return it
+Ex:["Hello", "there", "students", "of", "SEDC", "!"]
+Result: "Hello there students of SEDC !"
+*/
+
+function sentenceM(array) {
+  let makeSentence = [];
+  for (let word of array) {
+    makeSentence.push(array[word]);
+  }
+  return `These are the elements of the array!!!!! ${array}`;
+}
+// console.log(sentenceM(["Hello", "there", "students", "of", "SEDC", "!"]));
+
+/*
+
+Homework #4
+
+Title: Looping structures
+
+Description:Write a loop in javascript that goes from 1-20 that will print each number in the console and add "number is even" after every even number and add "number is odd" after every odd number
+
+*/
+function loopy() {
+  for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+      console.log(`the number ${i} is even`);
+    } else console.log(`the number ${i} is odd`);
+  }
+  return;
+}
+// loopy();
+
+/*
+
+Homework #5
+
+Title: Looping structures
+
+Description: Write a JavaScript function that will return:
+The sum of the MAX and max numbers from an array with numbers
+Ex: arr = [3, 5, 6, 8, 11]
+Output: Max: 11, Min: 3, Sum: 14
+
+Bonus: Try making the function work if there are other types of items in it
+*/
+function miniMiniMaxi(numbers) {
+  let min = numbers[0];
+  let max = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < min) min = numbers[i];
+    if (numbers[i] > max) max = numbers[i];
+  }
+  console.log(`the min num is ${min}`);
+  console.log(`the max num is ${max}`);
+  let sum = min + max;
+  console.log(`the sum is ${sum}`);
+}
+// miniMiniMaxi([5, 9, 15, 26, 3]);
+/* Title: Looping structures
+
+Description:Write a javascript function that:
+When given 2 arrays of students firstNames and lastNames will return a new array with students full names
+Every name should have a numeric value before it
+Ex: first = ["Bob", "Jill"], last = ["Gregory", "Wurtz"]
+Result: full = ["1. Bob Gregory", "2. Jill Wurtz"]
+*/
+
+function fullName(firstName, lastName) {
+  const wholeName = [];
+  for (i = 0; i < firstName.length && i < lastName.length; i++) {
+    wholeName[i] = `(${i + 1}. ${firstName[i]} ${lastName[i]}`;
+  }
+  return wholeName;
+}
+const ime = ["Goran", "Zoran", "Marjan", "Damjan"];
+const prezime = ["Miovski", "Belevski", "Strezovski", "Peshoski"];
+console.log(fullName(ime, prezime));
